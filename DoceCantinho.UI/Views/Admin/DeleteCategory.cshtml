@@ -1,0 +1,33 @@
+﻿@using DoceCantinho.Application.DTOs
+
+<link href="~/css/site.css" rel="stylesheet" />
+
+@model CategoryDto
+
+<div class="container mt-4">
+
+    <h2>Excluir Categoria</h2>
+
+    <div class="alert alert-danger">
+        Deseja realmente excluir a categoria
+        <strong>@Model.Name</strong>?
+    </div>
+
+    <form asp-action="DeleteCategoryConfirmed" method="post" asp-route-id="@Model.Id">
+        @Html.AntiForgeryToken()
+
+        <input asp-for="Id" type="hidden" />
+
+        <button type="submit" class="btn btn-danger">
+            Excluir
+        </button>
+
+        <a asp-action="Categories" class="btn btn-secondary">
+            Cancelar
+        </a>
+
+    </form>
+
+</div>
+
+<script src="~/js/site.js"></script>

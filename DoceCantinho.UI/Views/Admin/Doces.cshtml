@@ -1,0 +1,18 @@
+@using DoceCantinho.Application.DTOs
+@* Partial: lista de produtos no admin *@
+@model IEnumerable<DoceDto>
+
+<div class="admin-products-grid">
+
+    @foreach (var doce in Model)
+    {
+        <div class="admin-product-card">
+            <div class="admin-product-body">
+                <p>@doce.CategoryName</p>
+                 <img src="@doce.CoverImageUrl" height="50px" width="50px"/>
+                <h4>@doce.Title</h4>
+                <p>R$ @doce.Preco</p>
+            </div>
+        </div>
+    }
+</div>

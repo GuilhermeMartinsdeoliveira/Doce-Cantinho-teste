@@ -1,0 +1,26 @@
+﻿@using DoceCantinho.Domain.Interfaces
+<link href="~/css/site.css" rel="stylesheet" />
+@model Doce
+
+<div class="container mt-4">
+
+    <h2>Excluir Doce</h2>
+
+    <div class="alert alert-danger">
+        Deseja realmente excluir:
+        <strong>@Model.Id</strong> ?
+    </div>
+
+    <form asp-action="DeleteDoce">
+
+        <input asp-for="Id" hidden />
+
+        <button class="btn btn-danger">
+            Excluir
+        </button>
+
+    </form>
+
+</div>
+
+<script src="~/js/site.js"></script>

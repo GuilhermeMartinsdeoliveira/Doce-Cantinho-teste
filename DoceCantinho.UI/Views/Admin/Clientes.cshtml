@@ -1,0 +1,19 @@
+@* Clientes - dados mock via JS *@
+<div class="table-card">
+    <div id="clientes-table">
+        <p style="color:var(--muted-fg)">Carregando clientes...</p>
+    </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const el = document.getElementById('clientes-table');
+    if (!el) return;
+    if (typeof clients !== 'undefined' && clients.length) {
+        el.innerHTML = `<table class="data-table"><thead><tr><th>Nome</th><th>E-mail</th><th>Pedidos</th></tr></thead><tbody>
+            ${clients.map(c=>`<tr><td>${c.name}</td><td style="color:var(--muted-fg)">${c.email}</td><td>${c.orders}</td></tr>`).join('')}
+        </tbody></table>`;
+    } else {
+        el.innerHTML = '<p style="color:var(--muted-fg);padding:2rem 0">Nenhum cliente cadastrado ainda.</p>';
+    }
+});
+</script>

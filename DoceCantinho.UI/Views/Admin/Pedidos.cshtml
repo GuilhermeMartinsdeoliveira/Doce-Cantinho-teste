@@ -1,0 +1,44 @@
+﻿<link href="~/css/site.css" rel="stylesheet" />
+<!-- Pedidos tab -->
+
+<div id="atab-pedidos" style="display:none">
+
+    <div class="table-card">
+
+        <div class="table-header">
+
+            <h3>Todos os Pedidos</h3>
+
+            <div class="table-filters">
+
+                <div class="filter-input-wrap">
+
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                         stroke-width="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg>
+
+                    <input class="filter-input" type="text" placeholder="Buscar..." />
+
+                </div>
+
+                <button class="filter-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                         stroke-width="2">
+                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+                    </svg>Filtrar
+                </button>
+
+            </div>
+
+        </div>
+
+        <div style="overflow-x:auto" id="all-orders-table"></div>
+
+    </div>
+
+</div>
+
+<script src="~/js/site.js"></script>
+
