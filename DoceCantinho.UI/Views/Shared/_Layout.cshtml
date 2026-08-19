@@ -26,13 +26,16 @@
             </a>
 
             <div class="nav-links">
-                <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" ? "active" : "")"
+                <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "active" : "")"
                    asp-controller="Home" asp-action="Index">Home</a>
                 <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Doces" ? "active" : "")"
                    asp-controller="Doces" asp-action="Index">Loja</a>
-                <a class="nav-link" asp-controller="Home" asp-action="Servicos">Serviços</a>
-                <a class="nav-link" asp-controller="Home" asp-action="Sobre">Sobre Nós</a>
-                <a class="nav-link" asp-controller="Home" asp-action="Contato">Contato</a>
+                <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["action"]?.ToString() == "Servicos" ? "active" : "")"
+                   asp-controller="Home" asp-action="Servicos">Serviços</a>
+                <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["action"]?.ToString() == "Sobre" ? "active" : "")"
+                   asp-controller="Home" asp-action="Sobre">Sobre Nós</a>
+                <a class="nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" && ViewContext.RouteData.Values["action"]?.ToString() == "Contato" ? "active" : "")"
+                   asp-controller="Home" asp-action="Contato">Contato</a>
             </div>
 
             <div class="nav-actions">
