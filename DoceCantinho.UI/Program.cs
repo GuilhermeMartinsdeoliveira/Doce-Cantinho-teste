@@ -71,6 +71,16 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 //permitindo retornar páginas HTML renderizadas (Razor Views) a partir dos controladores.
 builder.Services.AddControllersWithViews();
 
+// ========================================================================
+// SESSÃO - Gerenciamento de estado do carrinho
+// ========================================================================
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Sessão expira em 30 minutos
+    options.Cookie.HttpOnly = true; // Cookie apenas via HTTP (segurança)
+    options.Cookie.IsEssential = true; // Essential para GDPR
+});
+
 //Cria a aplicação a partir do Builder configurado
 var app = builder.Build();
 
@@ -90,6 +100,11 @@ app.UseStaticFiles(); // Permite servir arquivos estáticos (CSS, JS, Imagens) d
 
 // Configura o roteamento das requisições para os controladores(controllers) e ações.
 app.UseRouting();
+
+// ========================================================================
+// SESSÃO - Middleware de sessão (deve estar ANTES de Authentication/Authorization)
+// ========================================================================
+app.UseSession();
 
 // Configura a autenticação e autorização para proteger rotas que exigem
 // login ou permissões específicas.
