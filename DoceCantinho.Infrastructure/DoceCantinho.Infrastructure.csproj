@@ -17,12 +17,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DoceCantinho.Application\DoceCantinho.Application.csproj" />
-    <ProjectReference Include="..\DoceCantinho\DoceCantinho.Domain.csproj" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <ProjectReference Include="..\DoceCantinho.Application\DoceCantinho.Application.csproj" />
+    <ProjectReference Include="..\DoceCantinho\DoceCantinho.Domain.csproj" />
   </ItemGroup>
 
 </Project>

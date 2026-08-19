@@ -30,6 +30,7 @@ namespace DoceCantinho.Domain.Interfaces
         /// </summary>
         Task AddAsync(Category category);
 
+
         /// <summary>
         /// Atualiza os dados de uma categoria existente.
         /// </summary>

@@ -1,5 +1,7 @@
-﻿using DoceCantinho.Domain.Entities;
+﻿
+using DoceCantinho.Domain.Entities;
 using DoceCantinho.Domain.Interfaces;
+
 using DoceCantinho.Infrastructure.Configurations;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -16,7 +18,7 @@ namespace DoceCantinho.Infrastructure.Context
         {
         }
         /// <summary>
-        /// DbSet que representa a tabela de Games no banco de dados.
+        /// DbSet que representa a tabela de Doces no banco de dados.
         /// </summary>
         public DbSet<Doce> Doces { get; set; }
 
